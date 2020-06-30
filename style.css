@@ -1,0 +1,59 @@
+body{
+    /* background-color: darkgray; */
+    font-size: 2rem;
+    /* width: 800px; */
+    min-height: 100vh;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template:
+        "... ...... ...... ...... ...... ...... ..." 
+        "... header header header header header ..." 150px
+        "... ...... ...... ...... ...... ...... ..." 10px
+        "... left   ...... center ...... right  ..."  1fr
+        "... ...... ...... ...... ...... ...... ..." 10px
+        "... footer footer footer footer footer ..." 300px
+        "... ...... ...... ...... ...... ...... ..." 
+        /* 横軸指定 */
+        / auto 150px 10px minmax(300px,1fr) 10px 200px auto 
+    ;
+    /* 1frは目いっぱい引き延ばすパラメータ（flex:1と同じ）
+    何も指定しない場合はauto
+    ※2frは1frの2倍設定 */
+
+    /* gapはgrid内の全パラメータ一様に指定px分の隙間を入れることができる
+    gap:10px; */
+
+    /* minmax(300px,1fr)は最小値、最大値を一気に指定可能 */
+}
+header{
+    background-color: darkgray;
+    grid-area: header;
+}
+main{
+    background-color: darkgray;
+    grid-area: center;
+}
+nav{
+    background-color: darkgray;
+    grid-area: left;
+}
+aside{
+    background-color: darkgray;
+    grid-area: right;
+}
+footer{
+    background-color: darkgray;
+    grid-area: footer;
+}
+/* @media screen and (max-width:800px){
+    body{
+        grid-template: 
+        "header" 150px
+        "center" 1fr
+        "left"
+        "right"
+        "footer" 300px;
+    }
+} */
+
